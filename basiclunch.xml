@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2" method="upgrade">
+
+	<name>Basic Lunch</name>
+	<creationDate>August 2014</creationDate>
+	<author>Nelkenjosef</author>
+	<authorEmail>basiclunch@nelkenjosef.de</authorEmail>
+	<authorUrl>https://github.com/nelkenjosef</authorUrl>
+	<copyright>Copyright Info</copyright>
+	<license>License Info</license>
+	<version>0.0.1</version>
+	<description>A component to control and manage a lunch system.</description>
+
+	<update> <!-- runs on update; new since J2.5 -->
+	<schemas>
+		<schemapath type="mysql">sql/updates/mysql/</schemapath>
+	</schemas>
+	</update>
+
+	<!-- site main file copy section -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>basiclunch.php</filename>
+	</files>
+
+	<administration>
+		<!-- administration menu section -->
+		<menu>Basic Lunch</menu>
+		<!-- admin main file copy section -->
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>basiclunch.php</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+		</files>
+	</administration>
+
+</extension>
