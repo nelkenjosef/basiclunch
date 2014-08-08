@@ -8,7 +8,7 @@
 	<authorUrl>https://github.com/nelkenjosef</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>0.0.2</version>
+	<version>0.0.3</version>
 	<description>A component to control and manage a lunch system.</description>
 
 	<update> <!-- runs on update; new since J2.5 -->
