@@ -8,7 +8,7 @@
 	<authorUrl>https://github.com/nelkenjosef</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>0.0.1</version>
+	<version>0.0.2</version>
 	<description>A component to control and manage a lunch system.</description>
 
 	<update> <!-- runs on update; new since J2.5 -->
@@ -21,6 +21,8 @@
 	<files folder="site">
 		<filename>index.html</filename>
 		<filename>basiclunch.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
 	</files>
 
 	<administration>
