@@ -1,4 +1,4 @@
 basiclunch
 ==========
 
-a basic component for Jomla 3.x legacy
+a basic component for Joomla 3.x legacy
