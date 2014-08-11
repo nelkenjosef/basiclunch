@@ -15,7 +15,13 @@ class BasicLunchViewBasicLunch extends JViewLegacy
 	function display($tpl = null)
 	{
 		// assign data to the view
-		$this->msg = 'Basic Lunch';
+		$this->msg = $this->get('msg');
+
+		// check for errors
+		if (count($errors = $this->get('Errors'))) {
+			JLog::add(implode('<br/>', $errors), JLog::WARNING, 'jerror');
+			return false;
+		}
 
 		// display the view
 		parent::display($tpl);
