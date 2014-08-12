@@ -12,35 +12,52 @@ jimport('joomla.application.component.modelitem');
 class BasicLunchModelBasicLunch extends JModelItem
 {
 	/**
-	 * @var string msg
+	 * @var array messages
 	 */
-	protected $msg;
+	protected $messages;
+
+	/**
+	 * returns a reference to a table object, always creating it
+	 *
+	 * @param string $type the table type to the instantiate
+	 * @param string $prefix a prefix for the table class name - optional
+	 * @param array $config configuration array for model - optional
+	 * @return JTable a database object
+	 * @since 2.5
+	 */
+	public function getTable($type = 'BasicLunch', $prefix = 'BasicLunchTable', $config = array())
+	{
+		return JTable::getInstance($type, $prefix, $config);
+	}
 
 	/**
 	 * get the message
+	 * @param int $id the corresponding id of the message to be retrieved
 	 * @return string the message to be displayed to the user
 	 */
-	public function getMsg()
+	public function getMsg($id = 1)
 	{
-		if (!isset($this->msg))
+		if (!is_array($this->messages))
 		{
+			$this->messages = array();
+		}
+
+		if (!isset($this->messages[$id]))
+		{
+			// request the selected id
 			$jinput = JFactory::getApplication()->input;
 			$id = $jinput->get('id', 1, 'INT');
 
-			switch ($id)
-			{
-				case 3:
-					$this->msg = 'groups with 5 to 6 persons';
-					break;
-				case 2:
-					$this->msg = 'groups with 3 to 4 persons';
-					break;
-				default:
-				case 1:
-					$this->msg = 'only 2 persons';
-					break;
-			}
+			// get the BasicLunchTable instance
+			$table = $this->getTable();
+
+			// load the message
+			$table->load($id);
+
+			// assign the message
+			$this->messages[$id] = $table->size;
 		}
-		return $this->msg;
+		
+		return $this->messages[$id];
 	}
 }
