@@ -5,4 +5,18 @@
 			<![CDATA[COM_BASICLUNCH_BASICLUNCH_VIEW_DEFAULT_DESC]]>
 		</message>
 	</layout>
+	<fields name="request">
+		<fieldset name="request">
+			<field
+				name="id"
+				type="list"
+				label="COM_BASICLUNCH_BASICLUNCH_FIELD_SIZE_LABEL"
+				description="COM_BASICLUNCH_BASICLUNCH_FIELD_SIZE_DESC"
+				default="1">
+				<option value="1">Single</option>
+				<option value="2">Little Group</option>
+				<option value="3">Big Group</option>
+			</field>
+		</fieldset>
+	</fields>
 </metadata>

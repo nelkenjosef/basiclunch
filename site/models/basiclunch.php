@@ -24,7 +24,22 @@ class BasicLunchModelBasicLunch extends JModelItem
 	{
 		if (!isset($this->msg))
 		{
-			$this->msg = 'Basic Lunch';
+			$jinput = JFactory::getApplication()->input;
+			$id = $jinput->get('id', 1, 'INT');
+
+			switch ($id)
+			{
+				case 3:
+					$this->msg = 'groups with 5 to 6 persons';
+					break;
+				case 2:
+					$this->msg = 'groups with 3 to 4 persons';
+					break;
+				default:
+				case 1:
+					$this->msg = 'only 2 persons';
+					break;
+			}
 		}
 		return $this->msg;
 	}
