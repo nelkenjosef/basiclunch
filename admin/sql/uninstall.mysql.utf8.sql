@@ -1,1 +1,1 @@
-DROP TABLE IF EXISTS `#__uninstall`;
+DROP TABLE IF EXISTS `#__basiclunch`;
