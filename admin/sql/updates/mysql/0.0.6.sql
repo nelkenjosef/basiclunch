@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `#__basiclunch`;
 
 CREATE TABLE `#__basiclunch` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
-	`size` varchar(25) NOT NULL,
+	`size` varchar(35) NOT NULL,
 	PRIMARY KEY  (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=0 DEFAULT CHARSET=utf8;
 
