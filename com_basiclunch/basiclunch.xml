@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <extension type="component" version="3.2" method="upgrade">
 
-	<name>Basic Lunch</name>
+	<name>COM_BASICLUNCH</name>
 	<creationDate>August 2014</creationDate>
 	<author>Nelkenjosef</author>
 	<authorEmail>basiclunch@nelkenjosef.de</authorEmail>
 	<authorUrl>https://github.com/nelkenjosef</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>0.0.7</version>
-	<description>A component to control and manage a lunch system.</description>
+	<version>0.0.8</version>
+	<description>COM_BASICLUNCH_DESCRIPTION</description>
 
 
 	<install> <!-- runs on install -->
@@ -33,21 +33,23 @@
 		<filename>index.html</filename>
 		<filename>basiclunch.php</filename>
 		<filename>controller.php</filename>
+		<folder>language</folder>
 		<folder>models</folder>
 		<folder>views</folder>
 	</files>
 
 	<administration>
 		<!-- administration menu section -->
-		<menu>Basic Lunch</menu>
+		<menu>COM_BASICLUNCH_MENU</menu>
 		<!-- admin main file copy section -->
 		<files folder="admin">
 			<filename>index.html</filename>
 			<filename>basiclunch.php</filename>
 			<filename>controller.php</filename>
+			<folder>language</folder>
+			<folder>models</folder>
 			<folder>sql</folder>
 			<folder>tables</folder>
-			<folder>models</folder>
 			<folder>views</folder>
 		</files>
 	</administration>
