@@ -10,7 +10,8 @@ JHtml::_('behavior.tooltip');
 
 <form action="<?php echo JRoute::_('index.php?option=com_basiclunch'); ?>"
 	  method="post"
-	  name="adminForm">
+	  name="adminForm"
+	  id="adminForm">
 	<table class="adminList">
 		<thead>
 			<?php echo $this->loadTemplate('head'); ?>
@@ -22,4 +23,9 @@ JHtml::_('behavior.tooltip');
 			<?php echo $this->loadTemplate('body'); ?>
 		</tbody>
 	</table>
+	<div>
+		<input type="hidden" name="task" value="" />
+		<input type="hidden" name="boxchecked" value="0" />
+		<?php echo JHtml::_('form.token'); ?>
+	</div>
 </form>

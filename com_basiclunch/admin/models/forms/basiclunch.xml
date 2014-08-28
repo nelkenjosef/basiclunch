@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field
+			name="id"
+			type="hidden"
+		/>
+		<field
+			name="size"
+			type="text"
+			label="COM_BASICLUNCH_BASICLUNCH_SIZE_LABEL"
+			description="COM_BASICLUNCH_BASICLUNCH_SIZE_DESC"
+			size="40"
+			class="inputbox"
+			default=""
+		/>
+	</fieldset>
+</form>
