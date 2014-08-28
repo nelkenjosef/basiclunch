@@ -8,7 +8,7 @@
 	<authorUrl>https://github.com/nelkenjosef</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>0.0.8</version>
+	<version>0.0.9</version>
 	<description>COM_BASICLUNCH_DESCRIPTION</description>
 
 
@@ -46,6 +46,7 @@
 			<filename>index.html</filename>
 			<filename>basiclunch.php</filename>
 			<filename>controller.php</filename>
+			<folder>controllers</folder>
 			<folder>language</folder>
 			<folder>models</folder>
 			<folder>sql</folder>

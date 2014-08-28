@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // no direct access to this file
 defined('_JEXEC') or die('Restricted access');
@@ -32,7 +32,21 @@ class BasicLunchViewBasicLunches extends JViewLegacy
 		$this->items = $items;
 		$this->pagination = $pagination;
 
+		// set the toolbar
+		$this->addToolBar();
+
 		// display the template
 		parent::display($tpl);
+	}
+
+	/**
+	 * setting the toolbar
+	 */
+	protected function addToolBar()
+	{
+		JToolbarHelper::title(JText::_('COM_BASICLUNCH_MANAGER_BASICLUNCHES'));
+		JToolbarHelper::deleteList('', 'basiclunches.delete');
+		JToolbarHelper::editList('basiclunch.edit');
+		JToolbarHelper::addNew('basiclunch.add');
 	}
 }
