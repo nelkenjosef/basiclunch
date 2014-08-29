@@ -3,6 +3,10 @@
 // no direct access to this file
 defined('_JEXEC') or die('Restricted access');
 
+// set some global property
+$document = JFactory::getDocument();
+$document->addStyleDeclaration('.icon-basiclunch {background-image: url(../media/com_basiclunch/images/restaurant-16x16.png);}');
+
 // import Joomla controller library
 jimport('joomla.application.component.controller');
 

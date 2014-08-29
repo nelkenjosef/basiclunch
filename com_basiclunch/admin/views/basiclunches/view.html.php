@@ -33,20 +33,37 @@ class BasicLunchViewBasicLunches extends JViewLegacy
 		$this->pagination = $pagination;
 
 		// set the toolbar
-		$this->addToolBar();
+		$this->addToolBar($this->pagination->total);
 
 		// display the template
 		parent::display($tpl);
+
+		// set the document
+		$this->setDocument();
 	}
 
 	/**
 	 * setting the toolbar
 	 */
-	protected function addToolBar()
+	protected function addToolBar($total = null)
 	{
-		JToolbarHelper::title(JText::_('COM_BASICLUNCH_MANAGER_BASICLUNCHES'));
+		JToolbarHelper::title(JText::_('COM_BASICLUNCH_MANAGER_BASICLUNCHES') .
+				// reflect number of items in title
+				($total ? ' <span style="font-size:0.5em;vertiva-align:middle;">(' . $total . ')</span>' : '')
+				, 'basiclunch');
 		JToolbarHelper::deleteList('', 'basiclunches.delete');
 		JToolbarHelper::editList('basiclunch.edit');
 		JToolbarHelper::addNew('basiclunch.add');
+	}
+
+	/**
+	 * method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument()
+	{
+		$document = JFactory::getDocument();
+		$document->setTitle(JText::_('COM_BASICLUNCH_ADMINISTRATION'));
 	}
 }
