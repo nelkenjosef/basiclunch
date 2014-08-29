@@ -8,7 +8,7 @@
 	<authorUrl>https://github.com/nelkenjosef</authorUrl>
 	<copyright>Copyright Info</copyright>
 	<license>License Info</license>
-	<version>0.0.9</version>
+	<version>0.0.10</version>
 	<description>COM_BASICLUNCH_DESCRIPTION</description>
 
 
@@ -38,9 +38,14 @@
 		<folder>views</folder>
 	</files>
 
+	<media destination="com_basiclunch" folder="media">
+		<filename>index.html</filename>
+		<folder>images</folder>
+	</media>
+
 	<administration>
 		<!-- administration menu section -->
-		<menu>COM_BASICLUNCH_MENU</menu>
+		<menu img="../media/com_basiclunch/images/restaurant-16x16.png">COM_BASICLUNCH_MENU</menu>
 		<!-- admin main file copy section -->
 		<files folder="admin">
 			<filename>index.html</filename>

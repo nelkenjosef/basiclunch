@@ -12,6 +12,13 @@ jimport('joomla.application.component.view');
 class BasicLunchViewBasicLunch extends JViewLegacy
 {
 	/**
+	 * view form
+	 *
+	 * @var string form
+	 */
+	protected $form = null;
+
+	/**
 	 * display method of Lunch View
 	 * @return void
 	 */
@@ -37,6 +44,9 @@ class BasicLunchViewBasicLunch extends JViewLegacy
 
 		// display the template
 		parent::display($tpl);
+
+		// set the document
+		$this->setDocument();
 	}
 
 	/**
@@ -47,10 +57,23 @@ class BasicLunchViewBasicLunch extends JViewLegacy
 		$input = JFactory::getApplication()->input;
 		$input->set('hidemainmeu', true);
 		$isNew = ($this->item->id == 0);
-		JToolbarHelper::title($isNew ? JText::_('COM_BASICLUNCH_MANAGER_NEW')
-									 : JText::_('COM_BASICLUNCH_MANAGER_EDIT'));
+		JToolbarHelper::title($isNew ? JText::_('COM_BASICLUNCH_MANAGER_BASICLUNCH_NEW')
+									 : JText::_('COM_BASICLUNCH_MANAGER_BASICLUNCH_EDIT'), 'basiclunch');
 		JToolbarHelper::save('basiclunch.save');
 		JToolbarHelper::cancel('basiclunch.cancel', $isNew ? 'JTOOLBAR_CANCEL'
 														   : 'JTOOLBAR_CLOSE');
+	}
+
+	/**
+	 * method to set up the document properties
+	 *
+	 * @return void
+	 */
+	protected function setDocument()
+	{
+		$isNew = ($this->item->id < 1);
+		$document = JFactory::getDocument();
+		$document->setTitle($isNew ? JText::_('COM_BASICLUNCH_BASICLUNCH_CREATING')
+								   : JText::_('COM_BASICLUNCH_BASICLUNCH_EDITING'));
 	}
 }
