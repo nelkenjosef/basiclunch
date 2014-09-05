@@ -5,13 +5,15 @@ defined('_JEXEC') or die('Restricted access');
 
 // load tooltip behavior
 JHtml::_('behavior.tooltip');
+JHtml::_('behavior.formvalidation');
 
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_basiclunch&layout=edit&id=' . (int)$this->item->id); ?>"
 	  method="post"
 	  name="adminForm"
-	  id="adminForm">
+	  id="basiclunch-form"
+	  class="form-validate">
 	<div class="form-horizontal">
 		<fieldset class="adminform">
 			<legend>

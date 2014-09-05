@@ -27,6 +27,7 @@ class BasicLunchViewBasicLunch extends JViewLegacy
 		// get the data
 		$form = $this->get('Form');
 		$item = $this->get('Item');
+		$script = $this->get('Script');
 
 		// check for errors
 		if (count($errors = $this->get('Errors')))
@@ -38,6 +39,7 @@ class BasicLunchViewBasicLunch extends JViewLegacy
 		// assign the data
 		$this->form = $form;
 		$this->item = $item;
+		$this->script = $script;
 
 		// set the toolbar
 		$this->addToolBar();
@@ -75,5 +77,9 @@ class BasicLunchViewBasicLunch extends JViewLegacy
 		$document = JFactory::getDocument();
 		$document->setTitle($isNew ? JText::_('COM_BASICLUNCH_BASICLUNCH_CREATING')
 								   : JText::_('COM_BASICLUNCH_BASICLUNCH_EDITING'));
+		$document->addScript(JUri::root() . $this->script);
+		$document->addScript(JUri::root() . "/administrator/components/com_basiclunch"
+										  . "/views/basiclunch/submitbutton.js");
+		JText::script('COM_BASICLUNCH_BASICLUNCH_ERROR_UNACCEPTABLE');
 	}
 }

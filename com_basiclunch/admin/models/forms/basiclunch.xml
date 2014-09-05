@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<form>
+<form addrulepath="/administrator/components/com_basiclunch/models/rules">
 	<fieldset>
 		<field
 			name="id"
@@ -11,7 +11,9 @@
 			label="COM_BASICLUNCH_BASICLUNCH_SIZE_LABEL"
 			description="COM_BASICLUNCH_BASICLUNCH_SIZE_DESC"
 			size="40"
-			class="inputbox"
+			class="inputbox validate-size"
+			validate="size"
+			required="true"
 			default=""
 		/>
 	</fieldset>

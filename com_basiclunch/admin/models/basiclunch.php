@@ -44,6 +44,16 @@ class BasicLunchModelBasicLunch extends JModelAdmin
 		return $form;
 	}
 
+	/**
+	 * method to get the script that have to be included on the form
+	 *
+	 * @return string script files
+	 */
+	public function getScript()
+	{
+		return 'administrator/components/com_basiclunch/models/forms/basiclunch.js';
+	}
+
 	/** method to get the data that should be injected in the form
 	 *
 	 * @return mixed the data for the form
